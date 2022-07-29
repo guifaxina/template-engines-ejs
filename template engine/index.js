@@ -27,16 +27,29 @@ const path = require("path")
 
 // });
 
-let user = {
-  name: "Guizinho123"
-  phone: ""
-}
+let users = [
+  {
+    id: 0,
+    name: "Guizinho",
+    phone: "(85)912839122",
+  },
+  {
+    id: 1,
+    name: "Denis",
+    phone: "(21)1237366666",
+  },
+  {
+    id: 2,
+    name: "Robertinho",
+    phone: "(50)2131245221",
+  }
+]
 
 app.set("views", path.join(__dirname, 'views'))
 app.set("view engine", "ejs");
 
 app.get("/", (req,res)=>{
-    res.render("user", { name: "Guilherme", phone: "(85)9892162520000"})
+    res.render("user", {users:users})
 })
 
 app.listen(4001, () => {
